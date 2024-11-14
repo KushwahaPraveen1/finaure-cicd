@@ -18,12 +18,12 @@ jobs:
         run: docker push kushwahapraveen/finaure-cicd:latest
         
   deploy:
-  needs: build
-  runs-on: finaure-cicd
-  steps:
-    - name: Pull image from docker hub
-      run: docker pull kushwahapraveen/finaure-cicd:latest
-    - name: Delete old container
-      run: docker rm -f finaure-cicd
-    - name: Run docker container
-      run: docker run -d -p 8000:8000 --name nodejs-app-container kushwahapraveen/finaure-cicd
+    needs: build
+    runs-on: [finaure-cicd]
+    steps:
+      - name: Pull image from docker hub
+        run: docker pull kushwahapraveen/finaure-cicd:latest
+      - name: Delete old container
+        run: docker rm -f finaure-cicd
+      - name: Run docker container
+        run: docker run -d -p 8000:8000 --name nodejs-app-container kushwahapraveen/finaure-cicd
