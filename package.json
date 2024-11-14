@@ -1,0 +1,34 @@
+{
+  "name": "finaure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@upstash/redis": "^1.34.3",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.4.0",
+    "firebase-admin": "^12.6.0",
+    "google-auth-library": "^9.14.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.6.4",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.1.7",
+    "redis": "^4.7.0",
+    "twilio": "^5.3.2",
+    "validator": "^13.12.0"
+  }
+}
