@@ -13,17 +13,17 @@ jobs:
       - name: Login to docker hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
       - name: Build docker image
-        run: docker build -t finaure/finaure-cicd .
+        run: docker build -t kushwahapraveen/finaure-cicd .
       - name: Publish image to docker hub
-        run: docker push finaure/finaure-cicd:latest
+        run: docker push kushwahapraveen/finaure-cicd:latest
         
   deploy:
     needs: build
     runs-on: [aws-ec2]
     steps:
       - name: Pull image from docker hub
-        run: docker pull finaure/finaure-cicd:latest
+        run: docker pull kushwahapraveen/finaure-cicd:latest
       - name: Delete old container
         run: docker rm -f finaure-cicd
       - name: Run docker container
-        run: docker run -d -p 5000:5000 --name nodejs-app-container finaure/finaure-cicd
+        run: docker run -d -p 5000:5000 --name nodejs-app-container kushwahapraveen/finaure-cicd
